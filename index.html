@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Contratación de Servicio Telefónico realizado por Lucas Román, Adrián Sutil y Kevin Herrera</title>
-    <link rel="stylesheet" 
-    type="test/css"
-    href="css/styles.css"/>
+    <title>formulario del isis</title>
 </head>
 <body>
     <form id="telecomForm">
@@ -19,15 +16,15 @@
         <label for="telefono">Número de Teléfono:</label>
         <input type="tel" id="telefono" name="telefono" pattern="\+[0-9]{1,4} [0-9]{3}-[0-9]{6}" title="Formato incorrecto. Ejemplo: +34 123-456789" required><br>
 
-        <label for="tarifa">Tarifa:</label>
+        <label for="tarifa">Tarifa ISIS:</label>
         <select id="tarifa" name="tarifa" required>
             <option value="" disabled selected>Selecciona una tarifa</option>
-            <option value="tarifa_joven">Tarifa Joven</option>
-            <option value="tarifa_senior">Tarifa Senior</option>
-            <option value="tarifa_plana">Tarifa Plana Superior</option>
+            <option value="tarifa_joven">ISIS Joven</option>
+            <option value="tarifa_senior">ISIS Senior</option>
+            <option value="tarifa_plana">ISIS Plana Superior</option>
         </select><br>
 
-        <label for="fechaInicio">Fecha de Comienzo del Servicio:</label>
+        <label for="fechaInicio">Fecha de Comienzo del Servicio ISIS:</label>
         <input type="date" id="fechaInicio" name="fechaInicio" required><br>
 
         <label for="correo">Correo Electrónico:</label>
@@ -36,7 +33,7 @@
         <label for="codigoPostal">Código Postal:</label>
         <input type="text" id="codigoPostal" name="codigoPostal" pattern="[0-9]{5}" title="Código Postal inválido. Debe tener 5 dígitos." required><br>
 
-        <label for="opinion">Opinión:</label>
+        <label for="opinion">Opinión que tengas del ISIS:</label>
         <textarea id="opinion" name="opinion" rows="5" maxlength="1000"></textarea><br>
 
         <label for="calificacion">Calificación (0-10):</label>
