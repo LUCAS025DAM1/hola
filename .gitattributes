@@ -1,2 +1,296 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+
+/* Estilos globales */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo más claro */
+    color: #333; /* Texto más oscuro para mayor contraste */
+}
+
+/* Estilo de vínculos no visitados */
+a {
+    color: #3498db; /* Azul brillante */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+}
+
+/* Estilo de vínculos al pasar el mouse */
+a:hover {
+    color: #2980b9; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Estilo para resaltar texto importante */
+strong {
+    color: #e74c3c; /* Rojo */
+}
+
+/* Estilo para citas */
+blockquote {
+    border-left: 4px solid #2ecc71; /* Borde izquierdo verde esmeralda para citas */
+    margin: 0;
+    padding-left: 15px;
+    color: #555;
+}
+
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #3498db; /* Color del pulgar de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f4f4f4; /* Color de la pista de la barra de desplazamiento */
+}
+
+/* Estilo para el encabezado del artículo */
+article header {
+    background-color: #27ae60; /* Verde más oscuro */
+    color: #fff;
+    padding: 3em 0; /* Aumenté el espacio interno */
+    text-align: center;
+    border-bottom: 5px solid #2ecc71; /* Borde inferior verde esmeralda */
+    position: relative;
+}
+
+/* Estilo para el título del artículo */
+article header h1 {
+    margin-bottom: 0.5em;
+    font-size: 2em; /* Tamaño de fuente más grande */
+}
+
+/* Estilo para la fecha del artículo */
+article header time {
+    font-style: italic;
+    color: #ecf0f1; /* Gris claro */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente aumentado */
+    display: block; /* Asegura que la fecha esté en una nueva línea */
+    margin-top: 0.5em; /* Ajuste de espacio superior */
+}
+
+/* Efecto de sombra sutil */
+article header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    height: 10px;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, rgba(39, 174, 96, 0.8), transparent 50%, rgba(39, 174, 96, 0.8));
+}
+/* Títulos */
+h1, h2 {
+    margin-bottom: 1.5em; /* Aumenté el espacio inferior */
+    color: #2c3e50; /* Azul oscuro para mayor legibilidad */
+    font-weight: bold; /* Texto en negrita */
+    line-height: 1.3; /* Altura de línea mejorada para la legibilidad */
+}
+
+/* Estilo adicional para h1 */
+h1 {
+    font-size: 2.5em; /* Tamaño de fuente más grande para h1 */
+}
+
+/* Estilo adicional para h2 */
+h2 {
+    font-size: 2em; /* Tamaño de fuente más grande para h2 */
+}
+
+/* Fecha del artículo */
+article header time {
+    font-style: normal; /* Cambiado a normal para mayor legibilidad */
+    font-size: 1em; /* Tamaño de fuente ajustado */
+    color: #e74c3c; /* Rojo para resaltar */
+    display: block; /* Forzar a que ocupe una línea completa */
+    margin-top: 1em; /* Espacio superior ajustado */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    font-weight: bold; /* Texto en negrita */
+}
+/* Estilos para las secciones */
+section {
+    background-color: aliceblue; /* Fondo más claro */
+    margin: 2em;
+    padding: 2em;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Agregado efecto de transición */
+}
+
+/* Efecto de hover para la sección */
+section:hover {
+    transform: scale(1.02); /* Escala ligeramente al pasar el mouse */
+}
+
+/* Estilo para los bordes internos de la sección */
+section::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid #ddd; /* Borde interno suave */
+    border-radius: 18px;
+    pointer-events: none; /* Evitar que afecte a la interacción del contenido */
+}
+
+/* Estilo para los márgenes internos de la sección */
+section > * {
+    margin: 0;
+}
+
+/* Ajustes de espacio interno para los elementos dentro de la sección */
+section > h2 {
+    margin-bottom: 1.5em;
+    color: #3498db; /* Azul brillante */
+}
+
+section > p {
+    margin-bottom: 1.5em;
+    color: #555;
+}
+
+/* Estilo para enlaces dentro de la sección */
+section a {
+    color: #e74c3c; /* Rojo */
+    text-decoration: underline;
+}
+
+/* Estilo de enlace al pasar el mouse */
+section a:hover {
+    color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Estilos para listas */
+ul {
+    padding-left: 30px;
+    color: #555;
+    list-style: none; /* Quita el estilo de la lista principal */
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+}
+
+ul li::before {
+    content: '\2022'; /* Utiliza un punto como marcador */
+    position: absolute;
+    left: 0;
+    color: #e74c3c; /* Rojo para el marcador */
+}
+
+/* Estilos para la lista anidada */
+ul ul {
+    margin-top: 0.5em; /* Ajuste de espacio superior */
+    list-style-type: square; /* Conserva el estilo de la lista anidada */
+}
+
+ul ul li::before {
+    content: '\25A0'; /* Utiliza un cuadrado como marcador para la lista anidada */
+    color: #e74c3c; /* Rojo para el marcador anidado */
+}
+
+/* Estilos para el formulario */
+form {
+    background-color: #fdfdfd; /* Fondo más claro */
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+}
+
+form label {
+    display: block;
+    margin-bottom: 1.5em;
+    color: #444; /* Texto más oscuro para mayor contraste */
+    font-size: 1.2em; /* Tamaño de fuente ligeramente aumentado */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 1.5em; /* Ajuste de espacio interno */
+    margin-bottom: 1.5em;
+    border: 2px solid #3498db; /* Borde azul brillante */
+    border-radius: 8px;
+    transition: border-color 0.3s; /* Efecto de transición en el borde */
+    font-size: 1em; /* Tamaño de fuente del campo de entrada */
+}
+
+/* Estilo para resaltar el campo activo */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #e74c3c; /* Rojo al enfocar */
+}
+
+form input[type="submit"] {
+    background-color: #e74c3c; /* Rojo */
+    color: #fff;
+    border: none;
+    padding: 1.5em 2.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.1em; /* Tamaño de fuente del botón */
+}
+
+form input[type="submit"]:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Borde de celdas */
+    padding: 15px;
+    text-align: left;
+}
+
+thead {
+    background-color: #e74c3c; /* Rojo */
+    color: #fff;
+}
+
+/* Estilo alternativo para filas */
+tbody tr:nth-child(even) {
+    background-color: #f8f8f8; /* Fondo gris claro para filas pares */
+}
+
+/* Resalta las celdas al pasar el mouse */
+tbody tr:hover {
+    background-color: #f2f2f2; /* Fondo gris más oscuro al pasar el mouse */
+    transition: background-color 0.3s;
+}
+
+/* Media queries para responsividad. Aún no hemos dado esto y solamente lo quiero mencionar. Busca su significado */
+/* aplicar estilos diferentes a un documento HTML en función de las características del
+dispositivo en el que se visualiza la página,
+principalmente basándose en el tamaño de la pantalla y la resolución. */
+@media (max-width: 600px) {
+    body {
+        background-color: #e3f2fd;
+    }
+
+    article header {
+        padding: 1em 0;
+    }
+
+    form input[type="submit"] {
+        width: 100%;
+    }
+}
